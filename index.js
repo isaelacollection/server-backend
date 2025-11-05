@@ -27,6 +27,14 @@ app.use("/api/upload", uploadRoutes);//para cargar la imagen a cloudinary
 // 👇 Esta línea debe existir
 app.use("/api/usuarios", usuarioRoutes);
 app.use("/api/auth", authRoutes);
+
+
+
+// Ruta raíz opcional para comprobar Render
+app.get("/", (req, res) => {
+  res.send("🚀 Backend activo en Render: server_backend funcionando correctamente");
+});
+
 // Servidor
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Servidor corriendo en puerto ${PORT}`));
