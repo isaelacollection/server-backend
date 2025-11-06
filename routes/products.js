@@ -6,15 +6,30 @@ import { upload } from "./upload.js"; // ✅ Importamos la configuración lista
 const router = express.Router();
 
 // Obtener todos los productos
-router.get("/", async (req, res) => {
-  try {
-    const productos = await Product.find();
-    res.json(productos);
-  } catch (err) {
-    res.status(500).json({ error: "Error al obtener productos" });
-  }
-});
-
+// @route   GET /api/products
+// @desc    Obtener todos los productos
+// @access  Public (Asumiendo que no requiere autenticación para leer)
+router.get('/', async (req, res) => {
+    try {
+        // Intenta obtener todos los productos.
+        const products = await Product.find(); 
+        
+        // Si todo va bien, devuelve la lista
+        res.status(200).json(products);
+        
+    } catch (error) {
+        // ✅ CORRECCIÓN CLAVE: Registra el error interno para saber qué pasó
+        // Esto es CRÍTICO para la depuración en tu consola de backend (render.com o local)
+        console.error("❌ Error al obtener productos en /api/products:", error.message, error);
+        
+        // ✅ MEJORA: Devuelve un mensaje de error 500 (Error interno del servidor)
+        // e incluye los detalles del error para la depuración del cliente (si es necesario)
+        res.status(500).json({ 
+            error: "Error al obtener productos", 
+            details: error.message // Muestra el mensaje de error de Mongoose/MongoDB
+        });
+    }
+})
 
 
 
