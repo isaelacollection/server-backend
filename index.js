@@ -4,8 +4,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
 import productRoutes from "./routes/products.js";
+import productPantalonRoutes from "./routes/productPantalones.js";
 import uploadRoutes from "./routes/upload.js";
 import usuarioRoutes from "./routes/usuarios.js";
+import authRoutes from "./routes/auth.js";
 import authRoutes from "./routes/auth.js";
 
 //mongoose.connect(process.env.MONGO_URI)
@@ -23,6 +25,7 @@ mongoose
 
 // Rutas
 app.use("/api/products", productRoutes);
+app.use("/api/productPantalones", productPantalonRoutes);
 app.use("/api/upload", uploadRoutes);//para cargar la imagen a cloudinary
 // 👇 Esta línea debe existir
 app.use("/api/usuarios", usuarioRoutes);
