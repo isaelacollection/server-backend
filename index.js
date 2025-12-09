@@ -8,7 +8,7 @@ import productPantalonRoutes from "./routes/productPantalones.js";
 import uploadRoutes from "./routes/upload.js";
 import usuarioRoutes from "./routes/usuarios.js";
 import authRoutes from "./routes/auth.js";
-import authRoutes from "./routes/auth.js";
+
 
 //mongoose.connect(process.env.MONGO_URI)
 const app = express();
