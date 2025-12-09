@@ -48,7 +48,7 @@ router.post("/", upload.single("imagen"), async (req, res) => {
       nombrePantalon,
       precioPantalon,
       stockPantalon,
-      image: req.file.path, // URL generada por Cloudinary
+      imagePantalon: req.file.path, // URL generada por Cloudinary
     });
 
     await nuevo.save();
