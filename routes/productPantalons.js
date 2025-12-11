@@ -66,7 +66,7 @@ router.post("/", upload.single("imagen"), async (req, res) => {
 // Actualizar producto
 router.put("/:id", async (req, res) => {
   try {
-    const actualizado = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const actualizado = await ProductPantalon.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json(actualizado);
   } catch (err) {
     res.status(400).json({ error: "Error al actualizar producto" });
@@ -76,7 +76,7 @@ router.put("/:id", async (req, res) => {
 // Eliminar producto
 router.delete("/:id", async (req, res) => {
   try {
-    await Product.findByIdAndDelete(req.params.id);
+    await ProductPantalon.findByIdAndDelete(req.params.id);
     res.json({ mensaje: "Producto eliminado" });
   } catch (err) {
     res.status(400).json({ error: "Error al eliminar producto" });
