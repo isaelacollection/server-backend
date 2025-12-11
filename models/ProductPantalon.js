@@ -1,3 +1,4 @@
+//models/ProductPantalon
 import mongoose from "mongoose";
 
 const productPantalonSchema = new mongoose.Schema({
