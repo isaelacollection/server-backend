@@ -1,6 +1,6 @@
 //routes/productPantalon
 import express from "express";
-import ProductPantalon from "../models/ProductPantalon.js";
+import ProductBlusa from "../models/ProductBlusa.js";
 import { upload } from "./upload.js"; // ✅ Importamos la configuración lista
 
 
@@ -13,7 +13,7 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     try {
         // Intenta obtener todos los productos.
-        const products = await ProductPantalon.find(); 
+        const products = await ProductBlusa.find(); 
         
         // Si todo va bien, devuelve la lista
         res.status(200).json(products);
@@ -36,17 +36,17 @@ router.get('/', async (req, res) => {
 //Crear producto (con imagen en Cloudinary)
 router.post("/", upload.single("imagen"), async (req, res) => {
   try {
-    const { nombrePantalon, precioPantalon, stockPantalon } = req.body;
+    const { nombreBlusa, precioBlusa, stockBlusa } = req.body;
 
     if (!req.file) {
       return res.status(400).json({ error: "Debe subir una imagen del producto" });
     }
 
     const nuevo = new ProductPantalon({
-      nombrePantalon,
-      precioPantalon,
-      stockPantalon,
-      imagePantalon: req.file.path, // URL generada por Cloudinary
+      nombreBlusa,
+      precioBlusa,
+      stockBlusa,
+      imageBlusa: req.file.path, // URL generada por Cloudinary
     });
 
     await nuevo.save();
@@ -64,7 +64,7 @@ router.post("/", upload.single("imagen"), async (req, res) => {
 // Actualizar producto
 router.put("/:id", async (req, res) => {
   try {
-    const actualizado = await ProductPantalon.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const actualizado = await ProductBlusa.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.json(actualizado);
   } catch (err) {
     res.status(400).json({ error: "Error al actualizar producto" });
@@ -74,7 +74,7 @@ router.put("/:id", async (req, res) => {
 // Eliminar producto
 router.delete("/:id", async (req, res) => {
   try {
-    await ProductPantalon.findByIdAndDelete(req.params.id);
+    await ProductBlusa.findByIdAndDelete(req.params.id);
     res.json({ mensaje: "Producto eliminado" });
   } catch (err) {
     res.status(400).json({ error: "Error al eliminar producto" });
