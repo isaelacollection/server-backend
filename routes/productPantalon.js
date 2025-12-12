@@ -1,4 +1,4 @@
-//routes/productPantalons
+//routes/productPantalon
 import express from "express";
 import ProductPantalon from "../models/ProductPantalon.js";
 import { upload } from "./upload.js"; // ✅ Importamos la configuración lista

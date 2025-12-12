@@ -4,7 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
 import productRoutes from "./routes/products.js";
-import productPantalonRoutes from "./routes/productPantalons.js";
+import productPantalonRoutes from "./routes/productPantalon.js";
 import uploadRoutes from "./routes/upload.js";
 import usuarioRoutes from "./routes/usuarios.js";
 import authRoutes from "./routes/auth.js";
