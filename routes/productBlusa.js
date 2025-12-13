@@ -1,4 +1,4 @@
-//routes/productPantalon
+//routes/productBlusa
 import express from "express";
 import ProductBlusa from "../models/ProductBlusa.js";
 import { upload } from "./upload.js"; // ✅ Importamos la configuración lista
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
     } catch (error) {
         // ✅ CORRECCIÓN CLAVE: Registra el error interno para saber qué pasó
         // Esto es CRÍTICO para la depuración en tu consola de backend (render.com o local)
-        console.error("❌ Error al obtener productos en /api/productPantalons:", error.message, error);
+        console.error("❌ Error al obtener productos en /api/productBlusas:", error.message, error);
         
         // ✅ MEJORA: Devuelve un mensaje de error 500 (Error interno del servidor)
         // e incluye los detalles del error para la depuración del cliente (si es necesario)
