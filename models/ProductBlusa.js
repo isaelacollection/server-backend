@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const productBlusaSchema = new mongoose.Schema({
-  nombreblusas: { type: String, required: true },
-  precioblusas: { type: Number, required: true },
-  stockblusas: { type: Number, required: true },
-  imageblusas: { type: String, required: true }
+  nombreBlusa: { type: String, required: true },
+  precioBlusa: { type: Number, required: true },
+  stockBlusa: { type: Number, required: true },
+  imageBlusa: { type: String, required: true }
 });
 
 export default mongoose.model("ProductBlusa", productBlusaSchema);
