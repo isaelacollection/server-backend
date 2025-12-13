@@ -6,6 +6,7 @@ dotenv.config();
 import productRoutes from "./routes/products.js";
 import productPantalonRoutes from "./routes/productPantalon.js";
 import productBlusaRoutes from "./routes/productBlusa.js";
+import productFaldaRoutes from "./routes/productFalda.js";
 import uploadRoutes from "./routes/upload.js";
 import usuarioRoutes from "./routes/usuarios.js";
 import authRoutes from "./routes/auth.js";
@@ -28,6 +29,7 @@ mongoose
 app.use("/api/products", productRoutes);
 app.use("/api/productPantalons", productPantalonRoutes);
 app.use("/api/productBlusas", productBlusaRoutes);
+app.use("/api/productFaldas", productFaldaRoutes);
 app.use("/api/upload", uploadRoutes);//para cargar la imagen a cloudinary
 // 👇 Esta línea debe existir
 app.use("/api/usuarios", usuarioRoutes);
