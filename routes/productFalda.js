@@ -42,7 +42,7 @@ router.post("/", upload.single("imagen"), async (req, res) => {
       return res.status(400).json({ error: "Debe subir una imagen del producto" });
     }
 
-    const nuevo = new ProductBlusa({
+    const nuevo = new ProductFalda({
       nombreFalda,
       precioFalda,
       stockFalda,
