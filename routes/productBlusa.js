@@ -36,16 +36,18 @@ router.get('/', async (req, res) => {
 //Crear producto (con imagen en Cloudinary)
 router.post("/", upload.single("imagen"), async (req, res) => {
   try {
-    const { nombreBlusa, precioBlusa, stockBlusa } = req.body;
+    const {categoriaBlusa, nombreBlusa, precioBlusa, stockBlusa, detalleBlusa } = req.body;
 
     if (!req.file) {
       return res.status(400).json({ error: "Debe subir una imagen del producto" });
     }
 
     const nuevo = new ProductBlusa({
+      categoriaBlusa,
       nombreBlusa,
       precioBlusa,
       stockBlusa,
+      detalleBlusa,
       imageBlusa: req.file.path, // URL generada por Cloudinary
     });
 
