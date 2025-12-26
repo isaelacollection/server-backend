@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
 
 const productFaldaSchema = new mongoose.Schema({
+  categoriaFalda: { type: String, required: true },
   nombreFalda: { type: String, required: true },
   precioFalda: { type: Number, required: true },
   stockFalda: { type: Number, required: true },
+  detalleFalda: { type: String, required: true },
   imageFalda: { type: String, required: true }
 });
 
