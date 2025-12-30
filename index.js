@@ -11,7 +11,7 @@ import productVestidoRoutes from "./routes/productVestido.js";
 import uploadRoutes from "./routes/upload.js";
 import usuarioRoutes from "./routes/usuarios.js";
 import authRoutes from "./routes/auth.js";
-import ventasRoutes from "./routes/ventas.js";
+import ventasRoutes from "./routes/venta.js";
 import detalleVentaRoutes from "./routes/detalleVenta.js";
 
 app.use("/api/ventas", ventasRoutes);
