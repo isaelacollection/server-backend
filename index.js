@@ -11,6 +11,11 @@ import productVestidoRoutes from "./routes/productVestido.js";
 import uploadRoutes from "./routes/upload.js";
 import usuarioRoutes from "./routes/usuarios.js";
 import authRoutes from "./routes/auth.js";
+import ventasRoutes from "./routes/ventas.js";
+import detalleVentaRoutes from "./routes/detalleVenta.js";
+
+app.use("/api/ventas", ventasRoutes);
+
 
 
 //mongoose.connect(process.env.MONGO_URI)
@@ -36,6 +41,8 @@ app.use("/api/upload", uploadRoutes);//para cargar la imagen a cloudinary
 // 👇 Esta línea debe existir
 app.use("/api/usuarios", usuarioRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/ventas", ventasRoutes);
+app.use("/api", detalleVentaRoutes);
 
 
 
