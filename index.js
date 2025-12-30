@@ -42,7 +42,7 @@ app.use("/api/upload", uploadRoutes);//para cargar la imagen a cloudinary
 app.use("/api/usuarios", usuarioRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/ventas", ventasRoutes);
-app.use("/api", detalleVentaRoutes);
+app.use("/api/detalleVentas", detalleVentaRoutes);
 
 
 
