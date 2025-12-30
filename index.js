@@ -14,7 +14,7 @@ import authRoutes from "./routes/auth.js";
 import ventasRoutes from "./routes/venta.js";
 import detalleVentaRoutes from "./routes/detalleVenta.js";
 
-app.use("/api/ventas", ventasRoutes);
+
 
 
 
