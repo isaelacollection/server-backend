@@ -21,7 +21,7 @@ const VentaSchema = new mongoose.Schema(
 
     metodoPago: {
       type: String,
-      enum: ["efectivo", "transferencia", "tarjeta", "whatsapp"],
+      enum: ["efectivo", "transferencia", "tarjeta", "WhatsApp"],
       required: true,
     },
 
