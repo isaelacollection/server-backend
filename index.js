@@ -11,7 +11,7 @@ import productVestidoRoutes from "./routes/productVestido.js";
 import uploadRoutes from "./routes/upload.js";
 import usuarioRoutes from "./routes/usuarios.js";
 import authRoutes from "./routes/auth.js";
-import ventasRoutes from "./routes/venta.js";
+import ventaRoutes from "./routes/venta.js";
 import detalleVentaRoutes from "./routes/detalleVenta.js";
 
 
@@ -41,7 +41,7 @@ app.use("/api/upload", uploadRoutes);//para cargar la imagen a cloudinary
 // 👇 Esta línea debe existir
 app.use("/api/usuarios", usuarioRoutes);
 app.use("/api/auth", authRoutes);
-app.use("/api/ventas", ventasRoutes);
+app.use("/api/ventas", ventaRoutes);
 app.use("/api/detalleVentas", detalleVentaRoutes);
 
 
